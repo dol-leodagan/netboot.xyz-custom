@@ -7,7 +7,7 @@
 clear custom_choice
 menu This is a Test Menu
 item --gap This is the first sub menu
-item option_one ${space} Windows Server 2019 Installer
+item option_one ${space} Windows Server 2019 x64 Installer
 item option_two ${space} Loading an ISO
 item --gap This is a second sub menu
 item option_three ${space} Loads another custom sub menu
@@ -19,12 +19,12 @@ goto custom_exit
 
 :option_one
 kernel http://${boot_domain}/wimboot
-initrd http://shield:8080/iso/win2019/${win_arch}/install.bat install.bat
-initrd http://shield:8080/iso/win2019/${win_arch}/winpeshl.ini winpeshl.ini
-initrd http://shield:8080/iso/win2019/${win_arch}/bootmgr bootmgr
-initrd http://shield:8080/iso/win2019/${win_arch}/boot/bcd bcd
-initrd http://shield:8080/iso/win2019/${win_arch}/boot/boot.sdi boot.sdi
-initrd http://shield:8080/iso/win2019/${win_arch}/sources/boot.wim boot.wim
+initrd http://shield:8080/iso/win2019/x64/install.bat install.bat
+initrd http://shield:8080/iso/win2019/x64/winpeshl.ini winpeshl.ini
+initrd http://shield:8080/iso/win2019/x64/bootmgr bootmgr
+initrd http://shield:8080/iso/win2019/x64/boot/bcd bcd
+initrd http://shield:8080/iso/win2019/x64/boot/boot.sdi boot.sdi
+initrd http://shield:8080/iso/win2019/x64/sources/boot.wim boot.wim
 md5sum wimboot
 iseq ${img_sigs_enabled} true && goto verify_sigs || goto skip_sigs
 :verify_sigs

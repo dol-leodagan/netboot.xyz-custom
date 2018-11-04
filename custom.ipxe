@@ -32,7 +32,7 @@ echo
 echo Checking wimboot signature...
 imgverify wimboot ${sigs}wimboot.sig || goto error
 :skip_sigs
-boot
+boot || goto custom_exit
 
 :option_two
 kernel https://boot.netboot.xyz/memdisk raw iso

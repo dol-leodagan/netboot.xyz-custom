@@ -5,11 +5,11 @@
 
 :custom
 clear custom_choice
-menu This is a Test Menu
-item --gap This is the first sub menu
-item option_one ${space} Windows Server 2019 x64 Installer
+menu Leodagan's Local Systems
+item --gap Windows Systems
+item win2019_x64 ${space} Windows Server 2019 x64 Installer
 item option_two ${space} Loading an ISO
-item --gap This is a second sub menu
+item --gap Utils Systems
 item option_three ${space} Loads another custom sub menu
 item option_four ${space} This is option four
 choose custom_choice || goto custom_exit
@@ -17,7 +17,7 @@ echo ${cls}
 goto ${custom_choice}
 goto custom_exit
 
-:option_one
+:win2019_x64
 kernel http://${boot_domain}/wimboot
 initrd http://shield:8080/iso/win2019/x64/install.bat install.bat
 initrd http://shield:8080/iso/win2019/x64/winpeshl.ini winpeshl.ini
